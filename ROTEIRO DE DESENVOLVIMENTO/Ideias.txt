@@ -1,0 +1,8 @@
+waves de inimigos
+	- a cada wave derrotada mais inimigos são spawnados
+	- a cada wave maior variação de inimigos com maior poder
+
+Defesa do castelo
+	-barracks dentro do castelo para treinar divisões de soldados, arqueiros e operadores de siege machines
+	-divisões de soldados podem ser enviados para fora do castelo para combater inimigos
+	-upgrade para criação de torre de mago (pode disparar magias contra inimigos ou encantar algum siege machine dar dano elemental)
