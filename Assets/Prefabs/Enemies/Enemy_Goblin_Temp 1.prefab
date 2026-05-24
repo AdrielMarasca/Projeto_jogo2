@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6073092917036077376}
   - component: {fileID: 5426664902328349323}
   - component: {fileID: 4846310718414463422}
+  - component: {fileID: 3069424301624846014}
   m_Layer: 0
   m_Name: Enemy_Goblin_Temp 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,6 +171,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e42b0ade210f945a8ee7e6b0cc7bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PathFollower
-  moveSpeed: 2
+  moveSpeed: 1
   waypointThreshold: 0.1
   showDebug: 1
+--- !u!114 &3069424301624846014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433014910468397809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b00615d021e99044a0fb5c65ed11676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 30
+  goldReward: 10
+  showDebugMessages: 1

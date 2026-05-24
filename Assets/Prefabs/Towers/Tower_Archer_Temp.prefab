@@ -157,6 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShooting
   projectilePrefab: {fileID: 4244980931123744356, guid: 038b3b11318a8cc4c83f53a35811beef, type: 3}
-  attackSpeed: 5
+  attackSpeed: 1
   attackDamage: 10
   showDebug: 1
