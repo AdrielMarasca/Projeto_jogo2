@@ -7,6 +7,7 @@ public class GridManager : MonoBehaviour
     public int gridHeight = 10;  // Número de linhas do grid
     public float tileWidth = 1f;  // Largura de cada tile em unidades de mundo
     public float tileHeight = 0.5f; // Altura de cada tile em unidades de mundo
+    private bool[,] isTileOccupied; // Matriz 2D: true = tile ocupado
 
     [Header("Tilemap Offset")]
     public Vector3 originPosition; // Ponto de origem do grid no mundo (base para as conversões)
@@ -15,6 +16,8 @@ public class GridManager : MonoBehaviour
     {
         // Usa a posição do GameObject como origem do grid ao iniciar
         originPosition = transform.position;
+
+        isTileOccupied = new bool[gridWidth, gridHeight];
     }
 
     /// <summary>
@@ -69,6 +72,27 @@ public class GridManager : MonoBehaviour
                gridPos.y >= 0 && gridPos.y < gridHeight;
     }
 
+    public bool IsTileFree(Vector2Int gridPos)
+    {
+        if (!IsValidGridPosition(gridPos))
+            return false;
+        
+        return !isTileOccupied[gridPos.x, gridPos.y];
+    }
+
+    public void OccupyTile(Vector2Int gridPos)
+    {
+    if (IsValidGridPosition(gridPos))
+        isTileOccupied[gridPos.x, gridPos.y] = true;
+    }
+
+
+    public void FreeTile(Vector2Int gridPos)
+    {
+    if (IsValidGridPosition(gridPos))
+        isTileOccupied[gridPos.x, gridPos.y] = false;
+    }
+
     // Desenha o grid no Editor com gizmos para visualizar a posição de cada tile.
     void OnDrawGizmos()
     {
@@ -88,3 +112,4 @@ public class GridManager : MonoBehaviour
         }
     }
 }
+
