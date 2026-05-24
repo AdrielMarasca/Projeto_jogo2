@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -20,7 +21,6 @@ public class EnemyHealth : MonoBehaviour
     }
 
     /// <summary>
-    /// Aplica dano ao inimigo. Retorna true se o inimigo morreu.
     /// </summary>
     public bool TakeDamage(float damageAmount)
     {
@@ -40,6 +40,9 @@ public class EnemyHealth : MonoBehaviour
         return false;
     }
 
+     public event Action OnDeath; // Evento disparado ao morrer
+
+    
     void Die()
     {
         if (isDead) return;
@@ -48,8 +51,10 @@ public class EnemyHealth : MonoBehaviour
         if (showDebugMessages)
             Debug.Log($"{gameObject.name} morreu! Dropa {goldReward} de ouro.");
 
-        // FUTURO: Adicionar ouro ao GameManager
-        // GameManager.Instance.AddGold(goldReward);
+        if (GameManager.Instance != null)
+        GameManager.Instance.AddGold(goldReward);
+        
+        OnDeath?.Invoke(); // Notifica os ouvintes (WaveManager)
 
         // FUTURO: Tocar animação de morte, partículas, som...
 

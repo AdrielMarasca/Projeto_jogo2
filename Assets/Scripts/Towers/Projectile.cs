@@ -67,6 +67,7 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Projétil colidiu com: {other.gameObject.name} (tag: {other.tag})");
         // Se colidir com o alvo pretendido
         if (target != null && other.gameObject == target)
         {

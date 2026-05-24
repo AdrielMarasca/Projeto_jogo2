@@ -85,8 +85,10 @@ public class PathFollower : MonoBehaviour
         if (showDebug)
             Debug.Log($"{gameObject.name} chegou à base! Dano ao jogador!");
         
-        // FUTURO: Avisar o GameManager para reduzir vidas
-        // GameManager.Instance.TakeDamage(1);
+        if (GameManager.Instance != null)
+        GameManager.Instance.TakeDamage(1);
+        else
+        Debug.LogError("PathFollower: GameManager.Instance não encontrado!");
         
         Destroy(gameObject); // Remove o inimigo
     }
