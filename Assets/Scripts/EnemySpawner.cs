@@ -7,8 +7,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject goblinPrefab;
 
     [Header("Spawn Settings")]
-    [SerializeField] private float timeBetweenSpawns = 1.5f;
-    [SerializeField] private int enemiesPerWave = 5;
+    [SerializeField] private float timeBetweenSpawns = 2.0f;
+    [SerializeField] private int enemiesPerWave = 6;
 
     [Header("Debug")]
     [SerializeField] private bool autoStart = true;
