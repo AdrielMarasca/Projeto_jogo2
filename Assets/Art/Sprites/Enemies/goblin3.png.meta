@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 8103580187eb3184b96974a4f8ef5c71
+guid: 94923047b0b80fd4ebd6e95281748825
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -765150924802650856
-    second: arrow_0
+      213: 2512227067573716576
+    second: goblin3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -55,9 +55,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -113,45 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arrow_0
+      name: goblin3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1
-        height: 887
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 81d839fa943a165f0800000000000000
-      internalID: -765150924802650856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: arrow_1
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 328
-        width: 1641
-        height: 291
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0dbb206b33bdba848a42d796d18e6691
-      internalID: -1761778114
+      spriteID: 0664ad525393dd220800000000000000
+      internalID: 2512227067573716576
       vertices: []
       indices: 
       edges: []
@@ -160,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ed526da3cf7667c4b99589cc9ed827bb
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -170,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      arrow_0: -765150924802650856
-      arrow_1: -1761778114
+      goblin3_0: 2512227067573716576
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
