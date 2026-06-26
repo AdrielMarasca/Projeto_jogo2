@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9047819103527099639}
   - component: {fileID: -9037474732265372820}
   - component: {fileID: -4606824318662482716}
-  - component: {fileID: 4847139628645959808}
   m_Layer: 0
   m_Name: Tower_Archer_Temp
   m_TagString: Untagged
@@ -81,16 +80,16 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 854542045
+  m_SortingLayer: 4
+  m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 3160818935635989916, guid: b9f085078b7d86543b51ec8aaab8674e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.48, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -130,7 +129,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 3
+  m_Radius: 4
 --- !u!114 &-9037474732265372820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,21 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7fe0d6c4bbd4b4cb05abfc5094e062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerShooting
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 4244980931123744356, guid: 038b3b11318a8cc4c83f53a35811beef, type: 3}
   attackSpeed: 1
-  attackDamage: 10
-  showDebug: 1
---- !u!114 &4847139628645959808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8023355329298292233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 985762a4c628b5047aac42932307e1c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerTargeting
-  targetingMode: 0
+  attackDamage: 5
   showDebug: 1
