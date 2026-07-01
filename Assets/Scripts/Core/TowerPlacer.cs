@@ -85,4 +85,22 @@ public class TowerPlacer : MonoBehaviour
         if (showDebugMessages)
             Debug.Log($"[TowerPlacer] Torre construída em Grid ({gridPos.x}, {gridPos.y})!");
     }
+
+    // Script do construtor de torres (onde o jogador clica)
+        void TentarConstruirTorre()
+        {
+            // Verifica o limite ANTES de gastar dinheiro ou instanciar a torre
+            if (GerenciadorConstrucao.Instance.torresAtuais >= GerenciadorConstrucao.Instance.maximoTorres)
+            {
+                Debug.Log("Você já atingiu o limite de 3 torres!");
+                // Toca um som de erro aqui, ou mostra uma mensagem na tela
+                return; 
+            }
+
+            // Se passou do limite:
+            // 1. Gasta ouro
+            // 2. Instancia a torre
+            // 3. Aumenta a variável: GerenciadorConstrucao.Instance.torresAtuais++;
+        }
 }
+        
