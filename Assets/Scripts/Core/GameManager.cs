@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int startingLives = 20;
     [SerializeField] private int startingGold = 100;
 
+    [Header("Tower Limits")]
+    [SerializeField] private int maxTowers = 3; // Limite máximo
+    private int currentTowers = 0; // Contador atual
+
     [Header("Debug")]
     [SerializeField] private bool showDebugMessages = true;
 
@@ -16,80 +20,69 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     void Start()
     {
         currentLives = startingLives;
         currentGold = startingGold;
+        currentTowers = 0; 
 
         if (showDebugMessages)
             Debug.Log($"GameManager iniciado. Vidas: {currentLives}, Ouro: {currentGold}");
     }
 
-    // --- Métodos de Ouro ---
-    public void AddGold(int amount)
-    {
-        currentGold += amount;
-        if (showDebugMessages)
-            Debug.Log($"Ouro adicionado: +{amount}. Total: {currentGold}");
-        // FUTURO: Atualizar HUD
-    }
-
+    // --- MÉTODOS DE OURO (Já estavam prontos) ---
+    public void AddGold(int amount) { currentGold += amount; /* Atualizar UI aqui */ }
+    
     public bool SpendGold(int amount)
     {
         if (currentGold >= amount)
         {
             currentGold -= amount;
-            if (showDebugMessages)
-                Debug.Log($"Ouro gasto: -{amount}. Restante: {currentGold}");
             return true;
         }
-        else
-        {
-            if (showDebugMessages)
-                Debug.Log("Ouro insuficiente!");
-            return false;
-        }
+        return false;
     }
-
     public int GetGold() => currentGold;
 
-    // --- Métodos de Vida ---
+    // --- MÉTODOS DE VIDA (Já estavam prontos) ---
     public void TakeDamage(int damage)
     {
         currentLives -= damage;
-
-        if (showDebugMessages)
-            Debug.Log($"Dano recebido: -{damage} vida(s). Vidas restantes: {currentLives}");
-
-        if (currentLives <= 0)
-        {
-            currentLives = 0;
-            GameOver();
-        }
-        // FUTURO: Atualizar HUD
+        if (currentLives <= 0) { currentLives = 0; GameOver(); }
     }
-
     public int GetLives() => currentLives;
 
-    void GameOver()
+    // --- NOVOS MÉTODOS PARA AS TORRES ---
+    public bool CanPlaceTower()
     {
-        if (showDebugMessages)
-            Debug.Log("GAME OVER! Você perdeu todas as vidas.");
-        // FUTURO: Tela de Game Over, reiniciar cena, etc.
-        Time.timeScale = 0; // Pausa o jogo (simples placeholder)
+        return currentTowers < maxTowers;
     }
 
+    public void RegisterTower()
+    {
+        currentTowers++;
+        if (showDebugMessages) Debug.Log($"Torre construída. ({currentTowers}/{maxTowers})");
+    }
+
+    public void UnregisterTower() // Use isso se a torre for destruída
+    {
+        currentTowers--;
+    }
+
+    // --- GAME OVER E VITÓRIA ---
+    void GameOver()
+    {
+        Debug.Log("GAME OVER!");
+        Time.timeScale = 0;
+    }
     public void Victory()
-{
-    if (showDebugMessages)
-        Debug.Log("VITÓRIA! Você defendeu o castelo com sucesso!");
-    Time.timeScale = 0;
+    {
+        Debug.Log("VITÓRIA!");
+        Time.timeScale = 0;
+    }
 }
-}
+
