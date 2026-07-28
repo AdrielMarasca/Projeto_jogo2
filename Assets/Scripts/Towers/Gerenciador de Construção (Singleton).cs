@@ -17,4 +17,4 @@ public class GerenciadorConstrucao : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-}
+}   

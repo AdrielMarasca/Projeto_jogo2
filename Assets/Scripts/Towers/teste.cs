@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TowerShooting : MonoBehaviour
+public class TestShooting : MonoBehaviour
 {
     [Header("Shooting Settings")]
     [SerializeField] private GameObject projectilePrefab;
@@ -18,7 +18,7 @@ public class TowerShooting : MonoBehaviour
     {
         targeting = GetComponent<TowerTargeting>();
         if (targeting == null)
-            Debug.LogError($"{gameObject.name}: TowerShooting precisa de um TowerTargeting!");
+            Debug.LogError($"{gameObject.name}: TestShooting precisa de um TowerTargeting!");
 
         // Calcula o cooldown baseado na velocidade de ataque
         attackCooldown = 1f / attackSpeed;
